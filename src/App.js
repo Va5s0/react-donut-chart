@@ -58,6 +58,7 @@ class App extends Component {
     return (
       <Legend key={i}
            value={value}
+           width={window.innerWidth/2+350}
            height={50+i*20}
            fill={this.colorScale(i)} />
     );
