@@ -30,7 +30,7 @@ class Slice extends Component {
   }
 
   render() {
-    let {value, label, fill, innerRadius = 0, outerRadius, padAngle, ...props} = this.props;
+    let {value, label, fill, innerRadius = 0, outerRadius, padAngle} = this.props;
 
     let arc = d3.arc()
       .innerRadius(innerRadius)
@@ -38,8 +38,7 @@ class Slice extends Component {
       .padAngle(padAngle);
     return (
       <g onMouseOver={this.onMouseOver}
-         onMouseOut={this.onMouseOut}
-         {...props}>
+         onMouseOut={this.onMouseOut}>
         <path d={arc(value)}
               fill={fill}
               fillOpacity={this.state.fillOpacity} />
